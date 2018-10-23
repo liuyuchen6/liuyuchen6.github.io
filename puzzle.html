@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>puzzle</title>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="style.css">
+   <script src='script.js'></script>
+</head>
+
+<body>
+<div class="container" id="instruction">
+  <div class="jumbotron">
+    <h3>Instruction</h3>
+    <p>Can you tell which art work is the art of Middle Age?
+     <br>
+      Click on the picture to see if you have the knowledge of art hitory. </p>
+    <button type="button" class="btn btn-default">Let's get started!</button>
+  </div>
+</div>
+<div class="container" id="pics" style="display:none";>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <img id="baroque" src="http://5b0988e595225.cdn.sohucs.com/images/20180228/3435af1c5479408abb7f31c89b713764.jpeg" alt="baroque" style="width:100%">
+            <div class="caption">
+            </div>
+          <div class="detail">
+            Period: Baroque(1661-1662)<br>
+            Artist: Rembrandt<br>
+            The Conspiracy of the Batavians under Claudius Civilis.</div>
+        </div>
+      </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+        <img id="Renaissance" src="http://5b0988e595225.cdn.sohucs.com/images/20180228/1fe3f8b8948047e483e731dbed78f1db.jpeg" alt="Renaissance" style="width:100%">
+        <div class="caption">
+        </div>
+    <div class="detail">
+          Period: Renaissance(1509–1510)<br>
+          Artist: Raphael<br>
+          the School of Athens.</div>
+        </div>
+    </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <img id="middleage" src="https://pic2.zhimg.com/80/v2-9b88d389445fe2fc7fad413ae69c2601_hd.jpg" alt="middleage" style="width:100%">
+            <div class="caption">
+            </div>
+       <div class="detail">
+         Period: Byzantine(547)<br>
+        Theodora panels in Basilica of San Vitale<br>
+         Justinian and His Entourage.</div>
+        </div>
+      </div>
+  <div class="container" id="startover">
+      <div class="btn-group">
+          <button type="button" class="btn btn-default" id="start">Start over</button>
+          <a href="https://en.wikipedia.org/wiki/Medieval_art" class="btn btn-warning" role="button" id="link">Learn more about art history!</a>
+        </div>
+      </div>
+</body>
+</html>

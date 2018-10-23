@@ -1,38 +1,22 @@
-body {
-   color: purple;
-   background-color: #d8da3d;
-   font-family: Helvetica, Geneva, Arial,
-   SunSans-Regular, sans-serif;
-          padding-left: 11em;}
-  h1 {
-font-family: Helvetica, Geneva, Arial,
-SunSans-Regular, sans-serif }
-ul.navbar {
-  position: absolute;
-  top: 2em;
-  left: 1em;
-  width: 9em;
-  list-style-type: none;
-     padding: 0;
-     margin: 0;}
- ul.navbar li {
-     background: white;
-     margin: 0.5em 0;
-     padding: 0.3em;
-     border-right: 1em solid black }
-
-     ul.navbar li:hover {
-         background: orange;
-       }
-
-
-   ul.navbar a {
-     text-decoration: none }
-   a:link {
-     color: blue }
-   a:visited {
-     color: purple }
-address {
-  margin-top: 1em;
-  padding-top: 1em;
-  border-top: thin dotted }
+body{
+  background-image:url(http://img.1sucai.com/tuku/yulantu/110923/10016-1109230R31925.jpg);
+  background-size: cover;
+}
+#pics{
+position:absolute;
+top:17%;
+bottom: 50%;
+left: 7%;
+}
+.detail{
+  font-family: sans-serif;
+  display:none;
+    padding: 20px;
+    text-align: left;
+}
+#startover{
+  display:none;
+  position:fixed;
+  left:38%;
+  bottom:9%;
+}
