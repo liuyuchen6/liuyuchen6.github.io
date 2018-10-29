@@ -9,6 +9,7 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="style.css">
    <script src='script.js'></script>
+   <script src='scriptjs.js'></script>
 </head>
 
 <body>
@@ -17,10 +18,23 @@
     <h3>Instruction</h3>
     <p>Can you tell which art work is the art of Middle Age?
      <br>
-      Click on the picture to see if you have the knowledge of art hitory. </p>
-    <button type="button" class="btn btn-default">Let's get started!</button>
+      Enter the number of pictures or click on the picture to see if you have the knowledge of art hitory. </p>
+    <button type="button" class="btn btn-default" id="continue">Let's get started!</button>
   </div>
 </div>
+<div class="container" id="input">
+  <h4>I think this one is the Medieval art!</h4>
+  <form id="number">
+    <div class="form-group">
+      <label>Input the Number(1-3 from left to right):</label>
+      <input class="form-control" type="number" id="value" placeholder="Enter the number">
+      <p id="demo"></p>
+    </div>
+  </form>
+</div>
+
+  <button onclick="myfunction()" class="btn btn-default" id="submit">Yes</button>
+
 <div class="container" id="pics" style="display:none";>
     <div class="row">
       <div class="col-md-4">

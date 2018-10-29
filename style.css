@@ -4,9 +4,9 @@ body{
 }
 #pics{
 position:absolute;
-top:17%;
+top:13%;
 bottom: 50%;
-left: 7%;
+left: 6%;
 }
 .detail{
   font-family: sans-serif;
@@ -17,6 +17,13 @@ left: 7%;
 #startover{
   display:none;
   position:fixed;
-  left:38%;
+  left:37%;
   bottom:9%;
+}
+#input{
+  display: none;
+position:absolute;
+  width:450px;
+  bottom:9%;
+  left:33%;
 }

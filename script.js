@@ -1,7 +1,8 @@
 $(document).ready(function(){
-  $("button").click(function(){
+  $("button#continue").click(function(){
     $(".container#instruction").fadeOut(300);
     $(".container#pics").fadeIn(200);
+    $(".container#input").fadeIn(200);
   });
   });
 $(document).ready(function(){
@@ -17,6 +18,7 @@ $(document).ready(function(){
     alert("Sorry, not me!");
   });
 });
+
 $(document).ready(function(){
   $("img#baroque").click(function(){
     alert("Oops, try it again!");
@@ -28,6 +30,7 @@ $(document).ready(function(){
     alert("Bingo!!! This is the Middle Age art work.");
       $(".detail").slideDown("slow");
       $("#startover").show(500);
+      $(".container#input").fadeOut(100);
   });
 });
 
@@ -35,5 +38,6 @@ $(document).ready(function(){
     $("#start").click(function(){
     $(".detail").slideUp("slow");
     $("#startover").hide();
+    $("#input").show();
 });
 });
