@@ -21,8 +21,8 @@ left: 6%;
   bottom:9%;
 }
 #input{
-  display: none;
-position:absolute;
+  display:none;
+position:fixed;
   width:450px;
   bottom:9%;
   left:33%;

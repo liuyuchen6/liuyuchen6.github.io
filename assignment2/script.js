@@ -27,7 +27,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#middleage").click(function(){
-    alert("Bingo!!! This is the Middle Age art work.");
       $(".detail").slideDown("slow");
       $("#startover").show(500);
       $(".container#input").fadeOut(100);
@@ -40,5 +39,4 @@ $(document).ready(function(){
     $("#startover").hide();
     $("#input").show();
 });
-
 });
