@@ -6,4 +6,5 @@ function myfunction(){
      else {
        var y = "wrong!";}
 document.getElementById("demo").innerHTML = y;
+document.getElementById("value").
     }
