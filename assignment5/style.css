@@ -1,0 +1,12 @@
+container{
+width:800px;
+}
+
+h3{
+  color:grey;
+}
+
+body{
+  background-color: red;
+  background-size: cover;
+}
