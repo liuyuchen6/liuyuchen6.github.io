@@ -2,7 +2,7 @@ $(document).ready(function(){
   var items = [];
         var i = 0;
         var airtable_read_endpoint = "https://api.airtable.com/v0/appX9uTXSkfFLL6wm/Most%20popular%20apps%20in%20China?api_key=key612jRf7pmMj1ce";
-        var dataSet = [];
+        var dataSet1 = [];
         $.getJSON(airtable_read_endpoint, function(result) {
                $.each(result.records, function(key,value) {
                    items = [];
@@ -12,10 +12,10 @@ $(document).ready(function(){
                        items.push(value.fields.company);
                        items.push(value.fields.Rating);
                        items.push(value.fields.Review_k);
-                       dataSet.push(items);
+                       dataSet1.push(items);
                 }); // end .each
                 $('#table1').DataTable( {
-                 data: dataSet,
+                 data: dataSet1,
                  retrieve: true,
                  columns: [
                    { title: "No",
@@ -39,7 +39,7 @@ $(document).ready(function(){
   var items = [];
         var i = 0;
         var airtable_read_endpoint = "https://api.airtable.com/v0/appX9uTXSkfFLL6wm/Most%20popular%20apps%20in%20HK?api_key=key612jRf7pmMj1ce";
-        var dataSet = [];
+        var dataSet2 = [];
         $.getJSON(airtable_read_endpoint, function(result) {
                $.each(result.records, function(key,value) {
                    items = [];
@@ -49,10 +49,10 @@ $(document).ready(function(){
                        items.push(value.fields.company);
                        items.push(value.fields.Rating);
                        items.push(value.fields.Review_k);
-                       dataSet.push(items);
+                       dataSet2.push(items);
                 }); // end .each
                 $('#table2').DataTable( {
-                 data: dataSet,
+                 data: dataSet2,
                  retrieve: true,
                  columns: [
                    { title: "No",
@@ -76,17 +76,17 @@ $(document).ready(function(){
   var items = [];
         var i = 0;
         var airtable_read_endpoint = "https://api.airtable.com/v0/appX9uTXSkfFLL6wm/Genre?api_key=key612jRf7pmMj1ce";
-        var dataSet = [];
+        var dataSet3 = [];
         $.getJSON(airtable_read_endpoint, function(result) {
                $.each(result.records, function(key,value) {
                    items = [];
                     items.push(value.fields.Genre);
                       items.push(value.fields.Count_HK);
                       items.push(value.fields.Count_CN);
-                       dataSet.push(items);
+                       dataSet3.push(items);
                 }); // end .each
                 $('#table3').DataTable( {
-                 data: dataSet,
+                 data: dataSet3,
                  retrieve: true,
                  columns: [
                    { title: "Genre",
