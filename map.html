@@ -6,6 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.1.3.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 <!-- reference to Leaflet CSS -->
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
@@ -55,20 +59,15 @@
           <h1 class="mb-3">The most popular KOL in Mainland China</h1>
 
           <br>
-          <button class="btn btn-default" onclick="show_districts()"> Check their location </button>
+          <button class="btn btn-default" onclick="show()"> Check their location </button>
           <br>
           <br>
-
           <div id="map"></div>
-
         </div>
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script>
+    <script>
 
       //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
       var map = L.map('map', {scrollWheelZoom:false}).setView([35.916667,116.383333],4);
@@ -85,54 +84,42 @@
           popupAnchor: [0,-15]
           });
 
-      // create popup contents
-      var customPopup = "LIU WEN<br/><img src='http://joshuafrazier.info/images/maptime.gif' alt='maptime logo gif' width='350px'/>";
 
-      // specify popup options
-      var customOptions =
-          {
-          'maxWidth': '500',
-          'className' : 'custom'
-          }
 
+          // specify popup options
+          var customOptions =
+              {
+              'maxWidth': '500',
+              'className' : 'custom'
+              }
       // create marker object, pass custom icon as option, pass content and options to popup, add to map
-      L.marker([40.7127,-74.0059], {icon: Icon}).bindPopup(customPopup,customOptions).addTo(map);
 
-  </script>
 
-  <script>
-  $(document).ready(function(){
     var items = [];
-          var i = 0;
           var airtable_read_endpoint = "https://api.airtable.com/v0/appiRHX5FxXLFDcjc/Location?api_key=key612jRf7pmMj1ce";
-          var data = [];
+          var data=[];
           $.getJSON(airtable_read_endpoint,function(result) {
                  $.each(result.records, function(key,value) {
-                     items = [];
-                      items.push(value.fields.Name);
-                        items.push(value.fields.Lat);
-                        items.push(value.fields.Lng);
-                         items.push(value.fields.loc);
-                         items.push(value.fields.url);
+                     items = {};
+                        items["name"]= value.fields.Name;
+                        items["lat"]= value.fields.Lat;
+                        items["lng"]= value.fields.Lng;
+                        items["location"]= value.fields.loc;
+                        items["pic"]= value.fields.url;
                          data.push(items);
                     console.log(items);
                   });
                 });
-              });
-                </script>
-                <script>
-function show_districts(){
-  for (var i in data) {
-      var latlng = L.latLng({ lat: data[i].Lat, lng: data[i].Lng});
-      L.marker( latlng )
-          .bindPopup( '<a href="' + data[i].Name + '" target="_blank">' + '<img src="' + data[i].url+'" width = "80px"><br>')
-          .addTo(map);
-  }
-}
+          function show(){
+                  for (var i in data) {
+                  var latLng = L.latLng({lat: data[i].lat, lng: data[i].lng});
+
+                      L.marker( latLng, {icon: Icon})
+                            // create popup contents
+                          .bindPopup( '<a href="' + data[i].name + '" target="_blank">' + '<img src="' + data[i].pic+'" width = "80px"><br>',customOptions)
+                          .addTo(map);
+                        }
+                      }
 </script>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
 </html>
