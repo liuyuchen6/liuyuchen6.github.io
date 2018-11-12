@@ -10,7 +10,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
 <!-- reference to Leaflet CSS -->
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
@@ -27,8 +26,8 @@
 /* css to customize Leaflet default styles  */
 .custom .leaflet-popup-tip,
 .custom .leaflet-popup-content-wrapper {
-   background: black;
-   color: white;
+   background:white;
+   color: black;
 }
 </style>
 
@@ -40,7 +39,7 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbar2SupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Gallery<br></a>
+            <a class="nav-link" href="homepage.html">Gallery<br></a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="value.html">Values</a>
@@ -57,7 +56,6 @@
       <div class="row">
         <div class="col-md-8 mx-auto">
           <h1 class="mb-3">The most popular KOL in Mainland China</h1>
-
           <br>
           <button class="btn btn-default" onclick="show()"> Check their location </button>
           <br>
@@ -70,7 +68,7 @@
     <script>
 
       //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
-      var map = L.map('map', {scrollWheelZoom:false}).setView([35.916667,116.383333],4);
+      var map = L.map('map', {scrollWheelZoom:false}).setView([38.916667,116.383333],4);
 
       //  add base map tiles from OpenStreetMap and attribution info to 'map' div
       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -79,7 +77,7 @@
 
       // create custom icon
       var Icon = L.icon({
-          iconUrl: 'http://www.shejiye.com/uploadfile/icon/2017/0203/shejiyeicondx1joee0kt2.png',
+          iconUrl: 'http://www.shejiye.com/uploadfile/icon/2017/0203/shejiyeiconhvdixhlijjf.png',
           iconSize: [38, 40], // size of the icon
           popupAnchor: [0,-15]
           });
@@ -92,8 +90,6 @@
               'maxWidth': '500',
               'className' : 'custom'
               }
-      // create marker object, pass custom icon as option, pass content and options to popup, add to map
-
 
     var items = [];
           var airtable_read_endpoint = "https://api.airtable.com/v0/appiRHX5FxXLFDcjc/Location?api_key=key612jRf7pmMj1ce";
@@ -110,16 +106,17 @@
                     console.log(items);
                   });
                 });
+                // create marker object, pass custom icon as option, pass content and options to popup, add to map
           function show(){
                   for (var i in data) {
                   var latLng = L.latLng({lat: data[i].lat, lng: data[i].lng});
-
-                      L.marker( latLng, {icon: Icon})
+                      L.marker( latLng, {icon:Icon})
                             // create popup contents
-                          .bindPopup( '<a href="' + data[i].name + '" target="_blank">' + '<img src="' + data[i].pic+'" width = "80px"><br>',customOptions)
+                          .bindPopup( '<img src="' + data[i].pic+'" width = "85px"><br><br>' +data[i].name,customOptions)
                           .addTo(map);
                         }
                       }
+
 </script>
 </body>
 </html>
