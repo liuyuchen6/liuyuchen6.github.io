@@ -17,7 +17,7 @@ gtag('config', 'UA-129104586-2',{'optimize_id':'GTM-MTMTN4D'});
 ga('require', 'GTM-MTMTN4D');
 </script>
 
-    <title>Live Wildly|Information</title>
+    <title>Live Wildly | Information</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -117,7 +117,7 @@ ga('require', 'GTM-MTMTN4D');
             <h2 class="mb-4">查看香港行山地图</h2>
             <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
             <br>
-            <button  class="btn btn-primary py-3 px-5" onclick="show()"> 全部路线 </button>
+            <button  class="btn btn-primary py-3 px-5" onclick="show()" id="all" > 全部路线 </button>
             <button  class="btn btn-white btn-outline-white py-3 px-5" id="hk"> 香港岛 </button>
             <button  class="btn btn-white btn-outline-white py-3 px-5" id="xj"> 新界 </button>
             <button  class="btn btn-white btn-outline-white py-3 px-5" id="ld"> 离岛 </button>
@@ -134,16 +134,11 @@ ga('require', 'GTM-MTMTN4D');
                 </div><!-- row -->
               </div>
         </div>
-
-<!--original
-            <div class="row no-gutters d-md-flex align-items-center">
-              <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                <div id="map"></div>
--->
-
     </section>
 
-
+<section class="ftco-section contact-section">
+  <p><br></p>
+</section>
     <section class="ftco-section contact-section">
       <div class="container mt-5">
         <div class="row block-9">
@@ -277,20 +272,25 @@ ga('require', 'GTM-MTMTN4D');
 
     //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
     var map = L.map('map', {scrollWheelZoom:true}).setView([22.291556,114.195278],10.5);
-var map1 = L.map('map1', {scrollWheelZoom:true}).setView([22.251556,114.195278],12);
-    //  add base map tiles from OpenStreetMap and attribution info to 'map' div
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map1);
-    // create custom icon
-    var Icon = L.icon({
-        iconUrl: 'https://cdn4.iconfinder.com/data/icons/summer-and-holidays-3/90/108-512.png',
-        iconSize: [38, 40], // size of the icon
-        popupAnchor: [0,-15]
-        });
+    var map1 = L.map('map1', {scrollWheelZoom:true}).setView([22.251556,114.195278],12);
+        //  add base map tiles from OpenStreetMap and attribution info to 'map' div
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map1);
+        // create custom icon
+        var Icon = L.icon({
+            iconUrl: 'https://cdn4.iconfinder.com/data/icons/summer-and-holidays-3/90/108-512.png',
+            iconSize: [38, 40], // size of the icon
+            popupAnchor: [0,-15]
+            });
+            var newicon = L.icon({
+              iconUrl:"images/icon.png",
+              iconSize:[38, 40],
+                popupAnchor: [0,15]
+            });
 
         // specify popup options
         var customOptions =
@@ -298,6 +298,9 @@ var map1 = L.map('map1', {scrollWheelZoom:true}).setView([22.251556,114.195278],
             'maxWidth': '500',
             'className' : 'custom'
             }
+            L.marker ([22.209067,114.259206],{icon:newicon}).bindPopup("鹤咀山",customOptions).addTo(map1);
+            L.marker ([22.235714,114.243703],{icon:newicon}).bindPopup("龙脊",customOptions).addTo(map1);
+            L.marker ([22.275469,114.143828],{icon:newicon}).bindPopup("太平山",customOptions).addTo(map1);
 
   var items = [];
         var airtable_read_endpoint = "https://api.airtable.com/v0/appV2xshk5tk7a8YD/hills?api_key=key612jRf7pmMj1ce";
@@ -325,9 +328,20 @@ var map1 = L.map('map1', {scrollWheelZoom:true}).setView([22.251556,114.195278],
                       }
                     }
 
-
 </script>
 <script>
+          $(document).ready(function(){
+            $("#hk").click(function(){
+              $("#map").hide();
+              $("#map1").show();
+            });
+          });
+          $(document).ready(function(){
+            $("#all").click(function(){
+              $("#map1").hide();
+              $("#map").show();
+            });
+          });
         $(document).ready(function(){
               $('a[href^="#"]').on('click',function (e) {
                   e.preventDefault();
@@ -342,6 +356,7 @@ var map1 = L.map('map1', {scrollWheelZoom:true}).setView([22.251556,114.195278],
                   });
               });
         });
+
         </script>
   </body>
 </html>
