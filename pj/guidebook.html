@@ -24,7 +24,8 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
 
@@ -43,6 +44,7 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+<!--datatable-->
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -82,16 +84,37 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
     </section>
 
         <section class="ftco-about d-md-flex">
-        	<div class="one-half img" style="background-image: url(images/gear.jpg);"></div>
+        	<div class="one-half img" style="background-image: url(images/lion.jpg);"></div>
         	<div class="one-half ftco-animate">
             <div class="heading-section ftco-animate ">
               <h2 class="mb-4">准备好出发了吗？选择最佳旅程</h2>
             </div>
             <div>
-      				<p>在这里，作为短期居住在香港的学生，每一个周末都显得弥足珍贵。这一行山指南为你挑选了香港行山最具特色的路线。</p>
+      				<p>在众多的路线和区域当中，这一行山指南为你挑选了香港行山最具特色的路线。你可以在本页根据你的能力、喜好的风景以及登山的时长来进行路线选择。如果确定了你的行程，欢迎来到活动页面加入我们。</p>
       			</div>
         	</div>
         </section>
+
+        <section class="ftco-section">
+          <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+              <div class="col-md-7 heading-section ftco-animate text-center">
+                <h2 class="mb-4">路线区域统计
+                  <br></h2>
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+              </div>
+            </div>
+            <div class="row">
+                <div class="staff" style= "width:1200px">
+                   <table id="table1" class="table table-white table-bordered table-hover" style="background-color:white;"></table>
+                   <div id="chart"></div>
+                </div>
+              </div>
+              </div>
+        </section>
+
+
+
 
     <section class="ftco-section ftco-services">
     	<div class="overlay"></div>
@@ -259,7 +282,6 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -277,6 +299,68 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https:////cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+  <script>
+  $(document).ready(function(){
+    var items = [];
+          var i = 0;
+          var airtable_read_endpoint = "https://api.airtable.com/v0/appV2xshk5tk7a8YD/location?api_key=key612jRf7pmMj1ce";
+          var dataSet1 = [];
+          $.getJSON(airtable_read_endpoint, function(result) {
+                 $.each(result.records, function(key,value) {
+                     items = [];
+                      items.push(value.fields.Name);
+                         items.push(value.fields.count);
+                         dataSet1.push(items);
+                  }); // end .each
+                  $("#table1").DataTable({
+                    data: dataSet1,
+                    retrieve: true,
+                    columns: [
+                      { title: "Name",
+                        defaultContent:""},
+                        { title: "count",
+                          defaultContent:""},
+                    ]
+                  });// end .getJSON
+       }); // end button
+        });
+
+        var chart = c3.generate({
+                                  data: {
+                                      columns: dataSet1,
+                                      type : 'bar',
+                                      labels: true,
+                                  },
+                                  color: {
+                                          pattern: []
+                                      },
+                                  axis: {
+                                              x: {label: 'Region'},
+                                              y: {label: 'Number of routes'}
+                                            },
+                                  grid: {
+                                            y: {
+                                                lines: [
+                                                    {value: 5, text: 'Label 5 for y', position: 'start'},
+
+                                                        ]
+                                                }
+                                          },
+                                         bar: {
+                                             title: "根据区域查看路线",
+
+                                         width: {
+                                                     ratio:0.3 // this makes bar width 50% of length between ticks
+                                                 },
+                                                 // or
+                                                 //width: 100 // this makes bar width 100px
+                                                },
+                              });
+</script>
 
   </body>
 </html>
