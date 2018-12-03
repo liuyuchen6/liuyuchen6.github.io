@@ -100,9 +100,9 @@ ga('require', 'GTM-MTMTN4D');
           <div class="row slider-text justify-content-center align-items-center">
 
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
-            	<h1 class="mb-3 mt-5 bread">了解香港的自然景观</h1>
-              <p class="mb-4 mb-md-5">对香港的登山路径你知多少？这里为大家统计了香港的登山</p>
-	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">返回主页</a></span> <span><a href="#map">查看地图</a></span></p>
+            	<h1 class="mb-3 mt-5 bread">在香港 登山是一种生活方式</h1>
+              <p class="mb-4 mb-md-5">山峦随处可见，你有没有尝试去了解他们？</p>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">返回主页</a></span> <span><a href="#map">查看信息</a></span></p>
             </div>
 
           </div>
@@ -270,8 +270,8 @@ ga('require', 'GTM-MTMTN4D');
     <script>
 
       //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
-      var map = L.map('map', {scrollWheelZoom:true}).setView([22.291556,114.195278],10.5);
-      var map1 = L.map('map1', {scrollWheelZoom:true}).setView([22.281556,114.195278],11);
+      var map = new L.map('map', {scrollWheelZoom:true}).setView([22.291556,114.195278],10.5);
+      var map1 = new L.map('map1', {scrollWheelZoom:true}).setView([22.281556,114.195278],11);
 
           //  add base map tiles from OpenStreetMap and attribution info to 'map' div
           L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -325,8 +325,16 @@ ga('require', 'GTM-MTMTN4D');
                       L.marker( latLng, {icon:Icon})
                             // create popup contents
                           .bindPopup( '<img src="' + data[i].pic+'" width = "85px"><br><br>' +data[i].name,customOptions)
-                          .addTo(map);
+                          .addTo(map)
+                          .on("click",function(){
+                            centerLeafletMapOnMarker(map,this);
+                          });
                         }
+                      }
+                      function centerLeafletMapOnMarker(map, marker) {
+                        var latLng = [ marker.getLatLng() ];
+                        var markerBounds = L.latLngBounds(latLng);
+                        map.fitBounds(markerBounds);
                       }
 
     </script>
@@ -336,6 +344,8 @@ ga('require', 'GTM-MTMTN4D');
                 $("#map").hide();
                 $("#map1").show();
               });
+              var map1= new L.map('map1', {scrollWheelZoom:true}).setView([22.281556,114.195278],11);
+
             });
             $(document).ready(function(){
               $("#all").click(function(){
