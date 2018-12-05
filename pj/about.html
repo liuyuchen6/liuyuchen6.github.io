@@ -25,6 +25,9 @@ ga('require', 'GTM-MTMTN4D');
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 
+    <!--timeline css-->
+    <link href="css/jquery.roadmap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
 
@@ -38,8 +41,6 @@ ga('require', 'GTM-MTMTN4D');
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -53,19 +54,19 @@ ga('require', 'GTM-MTMTN4D');
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.html" class="nav-link">主页 Home</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">主页 Home</a></li>
             <li class="nav-item"><a href="info.html" class="nav-link">了解登山 Basic Info</a></li>
            <li class="nav-item"><a href="gallery.html" class="nav-link">图册 Gallery</a></li>
            <li class="nav-item"><a href="guidebook.html" class="nav-link">指南 Guidebook</a></li>
            <li class="nav-item"><a href="activity.html" class="nav-link">组队 Activity</a></li>
-           <li class="nav-item"><a href="about.html" class="nav-link">更多 About</a></li>
+           <li class="nav-item active"><a href="about.html" class="nav-link">更多 About</a></li>
 	        </ul>
 	      </div>
 		  </div>
 	  </nav>
     <!-- END nav -->
 
-    <section class="home-slider owl-carousel img" style="background-image: url(images/bgw.jpg);">
+    <section class="home-slider owl-carousel img" style="background-image: url(images/bg.jpg);">
 
       <div class="slider-item" style="background-image: url(images/bg.jpg);">
       	<div class="overlay"></div>
@@ -81,6 +82,11 @@ ga('require', 'GTM-MTMTN4D');
         </div>
       </div>
     </section>
+
+
+    <div id="my-timeline"></div>
+
+
 
     <section class="ftco-section contact-section">
       <div class="container mt-5">
@@ -214,6 +220,99 @@ ga('require', 'GTM-MTMTN4D');
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Include jQuery Timeline Plugin -->
+  <script src="js/jquery.roadmap.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+
+        var events = [
+          {
+            date: '2015.5',
+            content: '安徽<small>Consectetur adipisicing elit</small>'
+          },
+          {
+            date: 'Q2 - 2018',
+            content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+          },
+          {
+            date: 'Q3 - 2018',
+            content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+          },
+          {
+            date: 'Q4 - 2018',
+            content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+          },
+              {
+                  date: 'Q1 - 2019',
+                  content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+              },
+              {
+                  date: 'Q2 - 2019',
+                  content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+              },
+              {
+                  date: 'Q3 - 2019',
+                  content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small><small>Consectetur adipisicing elit</small>'
+              },
+              {
+                  date: 'Q4 - 2019',
+                  content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+              },
+              {
+                  date: 'Q1 - 2020',
+                  content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+              },
+              {
+                  date: 'Q2 - 2020',
+                  content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+              },
+              {
+                  date: 'Q3 - 2020',
+                  content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+              },
+              {
+                  date: 'Q4 - 2020',
+                  content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+              },
+          {
+            date: 'Q1 - 2021',
+            content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+          },
+          {
+            date: 'Q2 - 2021',
+            content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+          },
+          {
+            date: 'Q3 - 2021',
+            content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+          },
+          {
+            date: 'Q4 - 2021',
+            content: 'Lorem ipsum dolor sit amet<small>Consectetur adipisicing elit</small>'
+          }
+        ];
+
+          $('#my-timeline').roadmap(events, {
+              eventsPerSlide: 6,
+              slide: 1,
+          });
+  });
+  </script>
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-36251023-1']);
+_gaq.push(['_setDomainName', 'jqueryscript.net']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
 
   </body>
 </html>

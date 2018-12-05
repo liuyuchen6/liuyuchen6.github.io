@@ -53,12 +53,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.html" class="nav-link">主页 Home</a></li>
-            <li class="nav-item"><a href="info.html" class="nav-link">了解登山 Basic Info</a></li>
-           <li class="nav-item"><a href="gallery.html" class="nav-link">图册 Gallery</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">主页 Home</a></li>
+            <li class="nav-item"><a href="info.html" class="nav-link">香港登山 HK Hiking</a></li>
+           <li class="nav-item active"><a href="gallery.html" class="nav-link">图册 Gallery</a></li>
            <li class="nav-item"><a href="guidebook.html" class="nav-link">指南 Guidebook</a></li>
-           <li class="nav-item"><a href="activity.html" class="nav-link">组队 Activity</a></li>
-           <li class="nav-item"><a href="about.html" class="nav-link">更多 About</a></li>
+           <li class="nav-item"><a href="activity.html" class="nav-link">行程 Activity</a></li>
+           <li class="nav-item"><a href="about.html" class="nav-link">关于我 About Me</a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -74,7 +74,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
             	<h1 class="mb-3 mt-5 bread">Gallery</h1>
-                <p class="mb-4 mb-md-5">Most Instagrammable! 这样拍，记录绝妙的登山瞬间！</p>
+                <p class="mb-4 mb-md-5">Most Instagrammable! 记录你的“野生”之旅，绝妙的登山瞬间应该这样拍！</p>
 	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">回到主页</a></span> <span>下拉继续</span></p>
             </div>
 
@@ -264,18 +264,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         	</div>
         </section>
 
-
 		<section class="ftco-section">
     	<div class="container-wrap">
           <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
               <div class="col-md-7 heading-section ftco-animate text-center">
-                <h2 class="mb-4">登山图册</h2>
+                <h2 class="mb-4">Hike and Shoot | 登山图册</h2>
                 <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-                <p class="mt-5"> Hike and Shoot | Instagram登山路线拍摄指南 </p>
+                <p class="mt-5"> Instagram登山最佳拍照精选。期待你与我们分享照片 </p>
               </div>
             </div>
-
             <div class="row d-flex">
               <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
@@ -397,6 +395,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                   </div>
                 </div>
               </div>
+              <div class="container">
+
+                <a href="#" class="social-share btn btn-success" data-share="facebook"><i class="fa fa-facebook"></i>Share to Facebook</a>
+
+                <a href="#" class="social-share btn btn-warning" data-share="pinterest"><i class="fa fa-pinterest"></i> Share to Pinterest</a><br>
+          <br>
+          </div>
 
             </div>
     </section>
@@ -483,5 +488,52 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
+<!--share plugins -->
+  <script src="js/shape.share.js"></script>
+
+  <script>
+
+  $(document)
+    .ready(
+      function(){
+
+        $('.social-share')
+          .shapeShare(
+            {
+              facebook: {
+                account: 'jqueryscript'
+              },
+              shortenUrl: {
+                enable: true,
+                apiKey: 'R_cb9b7614dbd84e4b8aee2a4f25a2fda9',
+                login: 'o_65q884feb1'
+              }
+            }
+          );
+
+      }
+    );
+    $('.social-share').shapeShare({
+  window: '<a href="https://liuyuchen6.github.io/pj/">popup</a>',
+  hashtags: '',
+  shortenUrl: {
+    enable: false,
+    login: '',
+    apiKey: ''
+  },
+  popupSize: {
+        width: '600',
+        height: '500'
+  },
+  twitter: {
+    account: '',
+    content: 'title'
+  }
+
+});
+
+</script>
+
   </body>
+
 </html>
