@@ -121,12 +121,57 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
             <div class="row">
                 <div class="staff" style="width:100%">
                    <table id="table1" class="table table-white table-bordered table-hover responsive nowrap" style="background-color:white;width:100%;"></table>
-                   <div id="chart"></div>
                 </div>
               </div>
               </div>
         </section>
 
+        <section class="ftco-section">
+          <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+              <div class="col-md-7 heading-section ftco-animate text-center">
+                <h2 class="mb-4">路线数据对比
+                  <br></h2>
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+              </div>
+            </div>
+            <div class="row">
+                <div class="staff" style="width:100%">
+                   <div id="chart-container2"></div>
+                </div>
+              </div>
+              </div>
+        </section>
+
+        <section class="ftco-section">
+          <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+              <div class="col-md-7 heading-section ftco-animate text-center">
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+              </div>
+            </div>
+            <div class="row">
+                <div class="staff" style="width:100%">
+                   <div id="chart-container"></div>
+                </div>
+              </div>
+              </div>
+        </section>
+
+        <section class="ftco-section">
+          <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+              <div class="col-md-7 heading-section ftco-animate text-center">
+                <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+              </div>
+            </div>
+            <div class="row">
+                <div class="staff" style="width:100%">
+                   <div id="chart-container3"></div>
+                </div>
+              </div>
+              </div>
+        </section>
 
     <footer class="ftco-footer ftco-section img">
       <div class="overlay"></div>
@@ -150,7 +195,7 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
               <div class="block-21 mb-4 d-flex">
                 <a class="blog-img mr-4" style="background-image: url(images/gannan.jpg);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="https://www.instagram.com/hiyuchen/">Hi！It's Yuchen here.<br>欢迎来到我的网站，希望更多人能享受户外生活，享受登山，并且能够在登山的途中记录美景！</a></h3>
+                  <h3 class="heading"><a href="https://www.instagram.com/hiyuchen/">Hi！It's Yuchen here.<br>欢迎来到我的网站，让“野生”指南带领你的旅行足迹走向每个独特的户外世界。</a></h3>
                   <div class="meta">
                     <div><span class="icon-calendar"></span> Dec 3, 2018</div>
                     <div><a href="https://www.instagram.com/hiyuchen/"><span class="icon-person"></span> Yuchen</a></div>
@@ -161,12 +206,12 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
           </div>
           <div class="col-lg-2 col-md-6 mb-5 mb-md-5">
              <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Service</h2>
-              <ul class="list-unstyled">
-                <li><a href="activity.html" class="py-2 d-block">Activity</a></li>
-                <li><a href="guidebook.html active" class="py-2 d-block">Guidebook</a></li>
-                <li><a href="gallery.html" class="py-2 d-block">Gallery</a></li>
-                <li><a href="information.html" class="py-2 d-block">Information</a></li>
+               <h2 class="ftco-heading-2">内容一览</h2>
+               <ul class="list-unstyled">
+                 <li><a href="activity.html" class="py-2 d-block">行程 Activity</a></li>
+                 <li><a href="guidebook.html" class="py-2 d-block">指南 Guidebook</a></li>
+                 <li><a href="gallery.html" class="py-2 d-block">图册 Gallery</a></li>
+                 <li><a href="information.html" class="py-2 d-block">咨讯 Information</a></li>
               </ul>
             </div>
           </div>
@@ -238,52 +283,428 @@ gtag('config', 'UA-129104586-2',{ 'optimize_id': 'GTM-MTMTN4D'});
        }); // end button
         });
 
-        var chart = c3.generate({
-                                  data: {
-                                      columns: dataSet1,
-                                      type : 'bar',
-                                      labels: true,
-                                  },
-                                  color: {
-                                          pattern: []
-                                      },
-                                  axis: {
-                                              x: {label: 'Region'},
-                                              y: {label: 'Number of routes'}
-                                            },
-                                  grid: {
-                                            y: {
-                                                lines: [
-                                                    {value: 5, text: 'Label 5 for y', position: 'start'},
-
-                                                        ]
-                                                }
-                                          },
-                                         bar: {
-                                             title: "根据区域查看路线",
-
-                                         width: {
-                                                     ratio:0.3 // this makes bar width 50% of length between ticks
-                                                 },
-                                                 // or
-                                                 //width: 100 // this makes bar width 100px
-                                                },
-                              });
 </script>
+   <!-- FusionCharts -->
+   <script type="text/javascript" src="fusionchart/js/fusioncharts.js"></script>
+   <!-- jQuery-FusionCharts -->
+   <script type="text/javascript" src="fusionchart/js/jquery-fusioncharts.js"></script>
+   <!-- Fusion Theme -->
+   <script type="text/javascript" src="fusionchart/js/themes/fusioncharts.theme.fusion.js"></script>
+   <script type="text/javascript" src="fusionchart/js/themes/fusioncharts.theme.ocean.js"></script>
 
+<script>
+$("#chart-container2").insertFusionCharts({
+   type: "msstackedcolumn2dlinedy",
+   width: "100%",
+   height: "100%",
+   dataFormat: "json",
+   dataSource: {
+  "chart": {
+    "caption": "根据路线长度、难度和美景指数来选择适合你的路线",
+    "pyaxisname": "路线评分 Rating",
+    "syaxisname": "路线长度 Distance",
+    "snumbersuffix": "km",
+    "syaxismaxvalue": "5",
+    "theme": "fusion",
+    "showvalues": "0",
+    "drawcrossline": "1",
+    "divlinealpha": "20"
+  },
+  "categories": [
+    {
+      "category": [
+        {
+          "label": "龙脊线"
+        },
+        {
+          "label": "鹤咀山线"
+        },
+        {
+          "label": "狮子山线"
+        },
+        {
+          "label": "飞鹅山线"
+        },
+        {
+          "label": "大帽山线"
+        },
+        {
+          "label": "梧桐寨线"
+        },
+        {
+          "label": "大东山线"
+        },
+        {
+          "label": "凤凰山线"
+        },
+        {
+          "label": "蒲台岛线"
+        },
+        {
+          "label": "大浪湾线"
+        },
+        {
+          "label": "浪茄湾线"
+        }
+      ]
+    }
+  ],
+  "lineset": [
+    {
+      "seriesname": "路线长度",
+      "plottooltext": "路线的总长度为 <b>$dataValue</b>",
+      "showvalues": "0",
+      "data": [
+        {
+          "value": "8.5"
+        },
+        {
+          "value": "9.0"
+        },
+        {
+          "value": "7.0"
+        },
+        {
+          "value":"8.0"
+        },
+        {
+          "value": "11.0"
+        },
+        {
+          "value": "6.0"
+        },
+        {
+          "value": "8.0"
+        },
+        {
+          "value": "5.0"
+        },
+        {
+          "value": "5.5"
+        },
+        {
+          "value": "11.0"
+        },
+        {
+          "value": "7.0"
+        },
+      ]
+    }
+  ],
+  "dataset": [
+    {
+      "dataset": [
+        {
+          "seriesname": "难度评分",
+          "data": [
+            {
+              "value": "2"
+            },
+            {
+              "value": "4"
+            },
+            {
+              "value": "3"
+            },
+            {
+              "value": "3"
+            },
+            {
+              "value": "4"
+            },
+            {
+              "value": "3"
+            },
+            {
+              "value": "3"
+            },
+            {
+              "value": "4"
+            },
+            {
+              "value": "2"
+            },
+            {
+              "value": "3"
+            },
+            {
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "seriesname": "美景评分",
+          "data": [
+            {
+              "value": "4"
+            },
+            {
+              "value": "4"
+            },
+            {
+              "value": "3"
+            },
+            {
+              "value": "3"
+            },
+            {
+              "value": "4"
+            },
+            {
+              "value": "4"
+            },
+            {
+              "value": "4"
+            },
+            {
+              "value": "5"
+            },
+            {
+              "value": "4"
+            },
+            {
+              "value": "5"
+            },
+            {
+              "value": "5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+}
+});
+$("#chart-container3").insertFusionCharts({
+   type: "msstepline",
+   width: "100%",
+   height: "100%",
+   dataFormat: "json",
+   dataSource: {
+  "chart": {
+    "caption": "登山最高景观海拔对比",
+    "subcaption": "Height (m)",
+    "showhovereffect": "1",
+    "drawverticaljoints": "1",
+    "useforwardsteps": "0",
+    "canvaspadding": "5",
+    "plottooltext": "路线最高点海拔为<b>$datavalue</b>",
+    "theme": "ocean"
+  },
+  "categories": [
+    {
+      "category": [
+        {
+          "label": "龙脊线"
+        },
+        {
+          "label": "鹤咀山线"
+        },
+        {
+          "label": "狮子山线"
+        },
+        {
+          "label": "飞鹅山线"
+        },
+        {
+          "label": "大帽山线"
+        },
+        {
+          "label": "梧桐寨线"
+        },
+        {
+          "label": "大东山线"
+        },
+        {
+          "label": "凤凰山线"
+        },
+        {
+          "label": "蒲台岛线"
+        },
+        {
+          "label": "大浪湾线"
+        },
+        {
+          "label": "浪茄湾线"
+        }
+      ]
+    }
+  ],
+  "dataset": [
+    {
+      "linethickness": "3",
+      "data": [
+        {
+          "value": "200"
+        },
+        {
+          "value": "325"
+        },
+        {
+          "value": "495"
+        },
+        {
+          "value": "602"
+        },
+        {
+          "value": "957"
+        },
+        {
+          "value": "450"
+        },
+        {
+          "value": "869"
+        },
+        {
+          "value": "934"
+        },
+        {
+          "value": "242"
+        },
+        {
+          "value": "344"
+        },
+        {
+          "value": "314"
+        }
+      ]
+    }
+  ]
+}
+});
+$("#chart-container").insertFusionCharts({
+   type: "stackedbar2d",
+   width: "100%",
+   height: "100%",
+   dataFormat: "json",
+   dataSource: {
+  "chart": {
+    "caption": "往返及登山花费总时长对比(h)",
+    "placevaluesinside": "1",
+    "showvalues": "0",
+    "plottooltext": "需花时长为<b>$dataValue</b>",
+    "theme": "fusion"
+  },
+  "categories": [
+    {
+      "category": [
+        {
+          "label": "龙脊线"
+        },
+        {
+          "label": "鹤咀山线"
+        },
+        {
+          "label": "狮子山线"
+        },
+        {
+          "label": "飞鹅山线"
+        },
+        {
+          "label": "大帽山线"
+        },
+        {
+          "label": "梧桐寨线"
+        },
+        {
+          "label": "大东山线"
+        },
+        {
+          "label": "凤凰山线"
+        },
+        {
+          "label": "蒲台岛线"
+        },
+        {
+          "label": "大浪湾线"
+        },
+        {
+          "label": "浪茄湾线"
+        }
+      ]
+    }
+  ],
+  "dataset": [
+    {
+      "seriesname": "从CUHK往返时长",
+      "data": [
+        {
+          "value": "5"
+        },
+        {
+          "value": "4.5"
+        },
+        {
+          "value": "1.5"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "2.5"
+        },
+        {
+          "value": "2.5"
+        },
+        {
+          "value": "4.5"
+        },
+        {
+          "value": "4.5"
+        },
+        {
+          "value": "6"
+        },
+        {
+          "value": "4"
+        },
+        {
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "seriesname": "登山远足时长",
+      "data": [
+        {
+          "value": "3"
+        },
+        {
+          "value": "5"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "3.5"
+        },
+        {
+          "value": "4.5"
+        },
+        {
+          "value": "4"
+        },
+        {
+          "value": "4"
+        },
+        {
+          "value": "4"
+        },
+        {
+          "value": "2.5"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "3"
+        }
+      ]
+    }
+  ]
+}
+});
+</script>
   </body>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
 </html>
