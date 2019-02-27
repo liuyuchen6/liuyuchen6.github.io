@@ -1,0 +1,59 @@
+﻿user_login,id,ref,creds,from_unixtime(wp_myCRED_log.time),user_id,membership_level,user_name,address_city
+babe,2,Log in,10,2019-02-18 20:01:23,2,4,babe,Hong Kong
+babe,2,View Content,5,2019-02-18 20:01:29,2,4,babe,Hong Kong
+babe,2,View Content,5,2019-02-18 20:01:58,2,4,babe,Hong Kong
+babe,2,View Content,5,2019-02-18 20:22:42,2,4,babe,Hong Kong
+babe,2,View Content,5,2019-02-18 20:22:49,2,4,babe,Hong Kong
+babe,2,View Content,5,2019-02-18 20:49:15,2,4,babe,Hong Kong
+babe,2,Log in,10,2019-02-25 16:24:58,2,4,babe,Hong Kong
+babe,2,View Content,5,2019-02-25 16:26:19,2,4,babe,Hong Kong
+babe,2,View Content,5,2019-02-25 16:26:29,2,4,babe,Hong Kong
+xiaoniu,6,Log in,10,2019-02-25 16:34:28,6,3,xiaoniu,Singapore
+xiaoniu,6,View Content,5,2019-02-25 16:34:31,6,3,xiaoniu,Singapore
+xiaoniu,6,View Content,5,2019-02-25 16:34:53,6,3,xiaoniu,Singapore
+xiaoniu,6,View Content,5,2019-02-25 16:34:58,6,3,xiaoniu,Singapore
+xiaohua,4,Log in,10,2019-02-25 18:19:21,4,4,xiaohua,Seoul
+xiaohua,4,View Content,5,2019-02-25 18:19:26,4,4,xiaohua,Seoul
+xiaohua,4,View Content,5,2019-02-25 18:19:54,4,4,xiaohua,Seoul
+xiaohua,4,View Content,5,2019-02-25 18:20:04,4,4,xiaohua,Seoul
+babe,2,View Content,5,2019-02-25 18:36:34,2,4,babe,Hong Kong
+babe,2,View Content,5,2019-02-25 18:47:03,2,4,babe,Hong Kong
+YCens,7,Log in,10,2019-02-25 18:47:19,7,2,YCens,Shanghai
+YCens,7,View Content,5,2019-02-25 18:47:22,7,2,YCens,Shanghai
+liuyuchenll,8,Log in,10,2019-02-25 18:47:45,8,3,liuyuchenll,Singapore
+liuyuchenll,8,View Content,5,2019-02-25 18:47:53,8,3,liuyuchenll,Singapore
+liuyuchenll,8,View Content,5,2019-02-25 18:47:56,8,3,liuyuchenll,Singapore
+xiaohua,4,Comments,1,2019-02-25 18:53:40,4,4,xiaohua,Seoul
+xiaoniu,6,Comments,1,2019-02-25 18:53:42,6,3,xiaoniu,Singapore
+babe,2,Comments,1,2019-02-25 18:53:43,2,4,babe,Hong Kong
+babe,2,Comments,1,2019-02-25 18:53:45,2,4,babe,Hong Kong
+babe,2,Comments,1,2019-02-25 18:53:45,2,4,babe,Hong Kong
+babe,2,Comments,1,2019-02-25 18:53:47,2,4,babe,Hong Kong
+babe,2,Comments,1,2019-02-25 18:53:48,2,4,babe,Hong Kong
+babe,2,Comments,1,2019-02-25 18:53:49,2,4,babe,Hong Kong
+liuyuchenll,8,Comments,1,2019-02-25 18:54:43,8,3,liuyuchenll,Singapore
+babe,2,Spam comment,-5,2019-02-25 18:54:50,2,4,babe,Hong Kong
+xiaohua,4,View Content,5,2019-02-25 22:24:19,4,4,xiaohua,Seoul
+xiaohua,4,View Content,5,2019-02-25 22:24:21,4,4,xiaohua,Seoul
+xiaohua,4,View Content,5,2019-02-25 22:24:31,4,4,xiaohua,Seoul
+Leila,9,Log in,10,2019-02-25 22:34:00,9,4,Leila,Seoul
+Leila,9,View Content,5,2019-02-25 22:34:12,9,4,Leila,Seoul
+Leila,9,View Content,5,2019-02-25 22:34:17,9,4,Leila,Seoul
+Leila,9,View Content,5,2019-02-25 22:34:20,9,4,Leila,Seoul
+Leila,9,View Content,5,2019-02-25 22:34:24,9,4,Leila,Seoul
+Leila,9,View Content,5,2019-02-25 22:34:30,9,4,Leila,Seoul
+Daniel,10,Log in,10,2019-02-25 22:37:10,10,3,Daniel,Hong Kong
+Daniel,10,View Content,5,2019-02-25 22:37:26,10,3,Daniel,Hong Kong
+Daniel,10,View Content,5,2019-02-25 22:38:00,10,3,Daniel,Hong Kong
+Daniel,10,View Content,5,2019-02-25 22:38:04,10,3,Daniel,Hong Kong
+liuyuchenll,8,View Content,5,2019-02-25 22:40:55,8,3,liuyuchenll,Singapore
+liuyuchenll,8,View Content,5,2019-02-25 23:00:23,8,3,liuyuchenll,Singapore
+liuyuchenll,8,View Content,5,2019-02-25 23:00:30,8,3,liuyuchenll,Singapore
+Daniel,10,View Content,5,2019-02-25 23:02:11,10,3,Daniel,Hong Kong
+Leila,9,View Content,5,2019-02-25 23:04:50,9,4,Leila,Seoul
+Leila,9,View Content,5,2019-02-25 23:05:02,9,4,Leila,Seoul
+liuyuchenll,8,View Content,5,2019-02-25 23:07:30,8,3,liuyuchenll,Singapore
+Jone,11,Log in,10,2019-02-25 23:08:09,11,2,Jone,Shanghai
+Jone,11,View Content,5,2019-02-25 23:08:13,11,2,Jone,Shanghai
+xiaoniu,6,View Content,5,2019-02-25 23:13:36,6,3,xiaoniu,Singapore
+Leila,9,Comments,1,2019-02-25 23:15:00,9,4,Leila,Seoul
