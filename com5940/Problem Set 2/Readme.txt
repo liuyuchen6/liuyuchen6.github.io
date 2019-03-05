@@ -1,6 +1,2 @@
-Thanks for downloading this theme!
+Pythonanywhere website link: http://6yuchen.pythonanywhere.com
 
-Theme Name: Delicious
-Theme URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
-Author: BootstrapMade.com
-Author URL: https://bootstrapmade.com
