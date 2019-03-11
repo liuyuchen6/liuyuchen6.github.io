@@ -158,14 +158,14 @@
     						</a>
     					</div>
     					<div class="col-md-3 ftco-animate">
-    						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(<?php bloginfo('template_url'); ?>/images/db.jpg);">
+							<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(<?php bloginfo('template_url'); ?>/images/db.jpg);">
     							<div class="icon mb-4 d-flex align-items-center justify-content-center">
         						<span class="icon-search"></span>
         					</div>
     						</a>
     					</div>
-              <div class="col-md-3 ftco-animate">
-    						<a href="/cool/" class="gallery img d-flex align-items-center" style="background-image: url(<?php bloginfo('template_url'); ?>/images/nsunsetpeak.jpg);">
+					<div class="col-md-3 ftco-animate">
+					<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(<?php bloginfo('template_url'); ?>/images/nsunsetpeak.jpg);">
     							<div class="icon mb-4 d-flex align-items-center justify-content-center">
         						<span class="icon-search"></span>
         					</div>

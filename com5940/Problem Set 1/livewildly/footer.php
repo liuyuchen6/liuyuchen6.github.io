@@ -7,10 +7,8 @@
            <h2 class="ftco-heading-2">现在出发>></h2>
            <ul class="list-unstyled">
              <li><a href="#" class="btn btn-white btn-outline-white p-3 py-2 d-block">回到顶部</a></li>
-             <li><a href="activity.html" class="btn btn-white btn-outline-white p-3 py-2 d-block">登记行程</a></li>
-             <li><a href="guidebook.html" class="btn btn-white btn-outline-white p-3 py-2 d-block">查看路线指南</a></li>
-             <li><a href="gallery.html" class="btn btn-white btn-outline-white p-3 py-2 d-block">查看热门照片</a></li>
-             <li><a href="information.html" class="btn btn-white btn-outline-white p-3 py-2 d-block">查看登山信息</a></li>
+             <li><a href="/cool/" class="btn btn-white btn-outline-white p-3 py-2 d-block">查看路线指南</a></li>
+			 <li><a href="/detail-info/" class="btn btn-white btn-outline-white p-3 py-2 d-block">路线详情</a></li>
           </ul>
         </div>
       </div>
@@ -18,7 +16,7 @@
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">Me</h2>
           <div class="block-21 mb-4 d-flex">
-            <a class="blog-img mr-4" style="background-image: url(images/gannan.jpg);"></a>
+            <a class="blog-img mr-4" style="background-image: url(<?php bloginfo('template_url'); ?>/images/gannan.jpg);"></a>
             <div class="text">
               <h3 class="heading"><a href="https://www.instagram.com/hiyuchen/">Hi！It's Yuchen here.<br>欢迎来到我的网站，让“野生”指南带领你的旅行足迹走向每个独特的户外世界。</a></h3>
               <div class="meta">

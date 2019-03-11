@@ -11,8 +11,5 @@ register_nav_menus(array(
 add_theme_support('post-thumbnails');
 add_theme_support('menus');
 
-add_filter( 'excerpt_length', function($length) {
-    return 20;
-} );
 
 ?>
