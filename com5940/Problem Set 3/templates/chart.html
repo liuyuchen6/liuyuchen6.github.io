@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+  <link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+</head>
+
+<body>
+  <!--banner-->
+  <section id="banner" background:url("static/img/bgimg.jpg")>
+    <div class="bg-color">
+      <header id="header">
+        <div class="container">
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+           <p><a href="/">Home</a></p>
+             <p><a href="/table">Table</a></p>
+            <p></p><a href="/chart">Charts</a></p>
+          </div>
+          <!-- Use any element to open the sidenav -->
+          <span onclick="openNav()" class="pull-right menu-icon">☰</span>
+        </div>
+      </header>
+      <div class="container">
+        <div class="row">
+          <div class="inner text-center">
+              <h1 class="logo-name">WP membership data</h1>
+            <p>This page shows the member activities on WP website.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / banner -->
+
+  <!--
+  <section id="list" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center marb-35">
+          <h1 class="header-h">List of most popular movies</h1>
+          <p class="header-p">This is the table of most popular movies generated with datatable. </p>
+        </div>
+    </div>
+  </section>
+/list -->
+  <!--visitors-->
+  <section id="visitors" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center marb-35">
+          <h1 class="header-h">Membership Management</h1>
+          <p class="header-p">Check out the member data of WordPress website
+         </p>
+        </div>
+      </div>
+      <br>
+     <div class="container">
+        <div class="inner text-center">
+        <h3>Geographic Distribution</h3>
+        <br>
+        </div>
+         <div class="col-md-6 col-sm-6">
+           <div id="chart"></div>
+         </div>
+        <div class="col-md-6 col-sm-6">
+            <br>
+            <br>
+            <div class="content-holder">
+            <h2>Cities the audience in</h2>
+            <p>From the pie chart, we can tell most of our audience are from asian cities, including Shanghai, Seoul, Hong Kong and Singapore.</p>
+            </div>
+        </div>
+     </div>
+    </div>
+        <br>
+         <br>
+    <div id="menu-wrapper">
+        <div class="container">
+        <div class="inner text-center">
+         <h3>Member activities</h3>
+          <p class="header-p">This is the table of our members and their engagement.
+         </p>
+         </div>
+          <table id="table" class="display" style="width:100%">
+                <thead>
+                 <tr>
+                  <th>Name</th>
+                  <th>Activity</th>
+                  <th>Balance</th>
+                 </tr>
+              </thead>
+              <tbody>
+                     {% for row in Members  %}
+                  <tr>
+                  <td>{{ row["Member"] }}</td>
+                  <td>{{ row["Activity_count"] }}</td>
+                  <td>{{ row["balance"] }}</td>
+                 </tr>
+                 {% endfor %}
+             </tbody>
+         </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/visitors-->
+
+  <!-- footer -->
+  <footer class="footer text-center">
+    <div class="footer-top">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 text-center">
+          <div class="widget">
+            <h4 class="widget-title">COMM 5940 python website</h4>
+            <div class="social-list">
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </div>
+            <p class="copyright clear-float">
+              © Delicious Theme. All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- / footer -->
+</body>
+
+ <!--original js-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="static/js/jquery.easing.min.js"></script>
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+     <script src="static/contactform/contactform.js"></script>
+<!--/js-->
+ <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<!--data table cdn-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+<!--c3 & d3 js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.css">
+<script>
+
+$(document).ready(function() {
+    $('#table').DataTable({
+        "scrollY":        "250px",
+        "scrollCollapse": true,
+        "paging":         false
+    } );
+});
+
+$(document).ready(function(){
+    var chart = c3.generate({
+         bindto:'#chart',
+    data: {
+        columns: [
+            {% for Name,Count in location %}
+            ['{{Name}}',{{Count}}],
+             {% endfor %}
+        ],
+        type : 'pie'
+    },
+    });
+});
+</script>
+<!--
+
+
+ -->
+</html>
