@@ -1,4 +1,4 @@
-# PS set 3
+# PS 3
 Website:http://yuchenliuweb.pythonanywhere.com/chart
 (Still have contents to update)
 
