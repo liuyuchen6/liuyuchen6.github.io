@@ -41,8 +41,12 @@ def chart():
     r2 = requests.get('https://api.airtable.com/v0/appWkESORpIhMnqaR/Members?api_key=key612jRf7pmMj1ce')
     dict = r2.json()
     dataset2 = []
+    memlist=[]
+    numlist=[]
     for i in dict['records']:
         dict = i['fields']
         dataset2.append(dict)
-    return render_template('chart.html',location =zip(loc,count), Members= dataset2)
-
+    for item in dataset2:
+        memlist.append(item.get('mem'))
+        numlist.append(item.get('num'))
+    return render_template('chart.html',location =zip(loc,count), Members= dataset2, balance=zip(memlist,numlist))

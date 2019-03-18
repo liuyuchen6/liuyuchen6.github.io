@@ -111,6 +111,12 @@
              </tbody>
          </table>
         </div>
+        <div class="container">
+        <br>
+        <div class="inner text-center">
+            <p>my chart</p>
+      </div>
+      <div id="mychart">
       </div>
     </div>
   </section>
@@ -181,10 +187,17 @@ $(document).ready(function(){
         type : 'pie'
     },
     });
+    var mychart = c3.generate({
+         bindto:'#mychart',
+    data: {
+        columns: [
+            {% for mem,num in balance %}
+            ['{{mem}}',{{num}}],
+             {% endfor %}
+        ],
+        type : 'bar'
+    },
+    });
 });
 </script>
-<!--
-
-
- -->
 </html>
